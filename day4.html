@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    #train {
+      position: relative;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="train" src="ball.png"  style="height: 100px; width: 100px;">
+  <button onclick="runDown()">Down</button>
+  <button onclick="runUp()">Up</button>
+  <button onclick="runLeft()">Left</button>
+  <button onclick="runRight()">Right</button>
+
+  <script>
+    function runDown() {
+      let init = Date.now();      
+      let runtime = setInterval(function() {
+        let runout = Date.now() - init;
+        train.style.top = runout / 5 + 'px';
+        if (runout > 4000) {
+          clearInterval(runtime)
+        };
+      },1);
+    }
+    function runUp() {
+      let init = Date.now();      
+      let runtime = setInterval(function() {
+        let runout = Date.now() - init;
+        train.style.bottom = runout / 5 + 'px';
+        run2()
+        if (runout > 6000) {
+          clearInterval(runtime)
+        };
+      },1);
+    }
+    function runLeft() {
+      let init = Date.now();      
+      let runtime = setInterval(function() {
+        let runout = Date.now() - init;
+        train.style.right = runout / 5 + 'px';
+        run2()
+        if (runout > 6000) {
+          clearInterval(runtime)
+        };
+      },1);
+    }
+    function runRight() {
+      let init = Date.now();      
+      let runtime = setInterval(function() {
+        let runout = Date.now() - init;
+        train.style.left = runout / 5 + 'px';
+        run2()
+        if (runout > 6000) {
+          clearInterval(runtime)
+        };
+      },1);
+    }
+  </script>
+
+
+</body>
+
+</html>

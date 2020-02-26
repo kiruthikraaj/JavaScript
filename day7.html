@@ -1,0 +1,460 @@
+<!-- 57. Check whether one number is positive and another one is negative -->
+
+<!-- <html>
+    <body>
+         <input id="x">
+        <input id="y">
+        <button type="button" onclick="positive_negative()">Click</button>
+       
+        <script>
+             function positive_negative(x,y){
+            var x = Number(document.getElementById("x").value);
+            var y = Number(document.getElementById("y").value);
+           
+                if((x<0 && y>0) || (x>0 && y<0) )
+                {
+                    document.write("True");
+                }
+                else
+                document.write("False");
+            }
+        </script>
+    </body>
+</html> -->
+
+<!-- 58. Adding 'py' in the front -->
+<!-- <html>
+    <body>
+        <input id="inpt">
+        <button type="button" onclick="stringCheck()" >Click</button>
+        <script>
+           
+          function stringCheck(text){
+              var text= document.getElementById("inpt").value;
+              if(text=== null || text === undefined || text.substring(0,2) === "Py")
+              {
+                  document.write(text);
+              }
+              else
+              document.write("Py"+text);
+          }  
+
+        </script>
+    </body>
+</html> -->
+
+<!-- 59. Remove character at a particular position -->
+
+<!-- <html>
+    <body>
+        <input id="text">
+        <input id="pos">
+        <button type="button" onclick="removeChar()" >Click</button>
+        <script>
+           
+          function removeChar(){
+              var text= document.getElementById("text").value;
+              var pos  = Number(document.getElementById("pos").value);
+
+              var part1 = text.substring(0,pos);
+              var part2 = text.substring(pos+1,text.length);
+              document.write(part1+part2);
+            
+          }  
+
+        </script>
+    </body>
+</html>  -->
+
+<!-- 60. Attach first char to first and last position  -->
+
+<!-- <html>
+    <body>
+        <input id="text">
+        <button type="button" onclick="attachChar()" >Click</button>
+        <script>
+           
+          function attachChar(){
+              var text= document.getElementById("text").value;
+              var letter = text.substring(0,1);
+              document.write(letter+text+letter);
+            
+          }  
+
+        </script>
+    </body>
+</html> -->
+
+<!-- 61. Check whether the given integer is multiple of 3 and 7 -->
+
+
+<!-- <html>
+    <body>
+        
+        <input id="y">
+        <button type="button" onclick="checkMultiple()">Click</button>
+       
+        <script>
+             function checkMultiple(){
+            var x = Number(document.getElementById("y").value);
+           
+                if(x%3==0 || x%7 ==0 )
+                {
+                    document.write(x+" is either multiple of 3 or 7");
+                }
+                else
+                document.write(x+" is neither multiple of 3 nor 7");
+            }
+        </script>
+    </body>
+</html> -->
+
+<!-- 62. Check whether String starts with Java -->
+
+<!-- <html>
+    <body>
+        <script>
+            var text = "script";
+            var starting = text.substring(0,4);
+            if(starting == "Java" || starting=="java")
+            {
+                document.write("This Text contains 'Java'");
+            }
+            else
+            document.write("This Text doesnot contains 'Java'");
+        </script>
+    </body>
+</html> -->
+
+<!-- 63. Nearest to 100 -->
+<!-- <html>
+    <body>
+        <script>
+           
+            function near_100(x, y) {
+            if (x != y)
+            {
+
+            x1 = Math.abs(x - 100);
+            y1 = Math.abs(y - 100);
+
+
+            if (x1 < y1)
+            {
+                return x;
+            }
+            if (y1 < x1)
+            {
+                return y;
+            }
+            return 0;
+            }
+            else
+                return false;
+            }
+
+            document.write(near_100(90, 89));
+        </script>
+    </body>
+</html> -->
+
+<!-- 64. 3 numbers same return 30 -->
+
+<!-- <html>
+    <body>
+        <script>
+            function three_numbers(x, y, z) {
+                    if (x == y && y == z) {
+                        return 30;
+                    }
+
+                    if (x == y || y == z || z == x) {
+                        return 40;
+                    }
+
+                    return 20;
+                    }
+                    document.write(three_numbers(8, 8, 8));
+                  
+        </script>
+    </body>
+</html> -->
+
+<!-- 65. reverse a string  -->
+
+<!-- <html> 
+    <body>
+        <script>
+            function string_reverse(str) 
+                {
+                    return str.split("").reverse().join("");
+                }
+
+                document.write(string_reverse("hiphoptamizha"));
+                
+        </script>
+    </body>
+</html> -->
+
+<!-- 66. Convert number to hours and minutes -->
+<!-- <html>
+    <body>
+        <script>
+            function time_convert(num)
+                { 
+                var hours = Math.floor(num / 60);  
+                var minutes = num % 60;
+                return hours + ":" + minutes;         
+                }
+
+                document.write(time_convert(71));
+               
+        </script>
+    </body>
+</html> -->
+
+<!-- 67. 8 or sum or difference of 8 -->
+<!-- <html>
+    <body>
+        <script>
+            function check8(x, y) {
+                if (x == 8 || y == 8) {
+                    return true;
+                }
+
+                if (x + y == 8 || Math.abs(x - y) == 8)
+                {
+                    return true;
+                }
+
+                return false;
+                }
+
+                document.write(check8(7, 8));
+            </script>
+    </body>
+</html> -->
+
+<!-- 68. Add two digits from a given number  -->
+
+<!-- <html>
+    <body>
+        <script>
+            function add_two_digits(n)
+                {
+                    return n % 10 + Math.floor(n / 10);
+                }
+                document.write(add_two_digits(25));
+        </script>
+    </body>
+</html> -->
+
+<!-- 69. Checking Leap year  -->
+<!-- <html>
+    <body>
+        <script>
+            function leapyear(year)
+                {
+                return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+                }
+                document.write(leapyear(2020));
+        </script>
+    </body>
+</html> -->
+
+
+<!-- 70. Js Program to get web address.  -->
+
+<!-- <html>
+    <body>
+        <script>
+            document.write(document.URL);
+        </script>
+    </body>
+</html> -->
+
+<!-- 71. print current page  -->
+<!-- <html>
+    <body>
+        <p>Hiphoptamizha</p>
+        <button type="button" onclick="fun()">Click</button>
+        <script>
+                function fun(){
+                    window.print();
+                }
+        </script>
+    </body>
+</html> -->
+
+<!-- 72. Area of the triangle   -->
+<!-- <html>
+    <body>
+        <script>
+            var side1 = 5; 
+            var side2 = 6; 
+            var side3 = 7; 
+            var s = (side1 + side2 + side3)/2;
+            var area =  Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)));
+            document.write(area);
+        </script>
+    </body>
+</html> -->  
+
+<!-- 73. user defined variable -->
+<!-- <html>
+    <body>
+        <script>
+            var var_name = 'hht';
+            var n = 120;
+            this[var_name] = n;
+            document.write(hht);
+        </script>
+    </body>
+</html> -->
+
+<!-- 74. date in specific format  -->
+<!-- <html>
+    <body>
+        <script>
+            var today = new Date();
+            var dd = today.getDate();
+
+            var mm = today.getMonth()+1; 
+            var yyyy = today.getFullYear();
+            if(dd<10) 
+            {
+                dd='0'+dd;
+            } 
+
+            if(mm<10) 
+            {
+                mm='0'+mm;
+            } 
+            today = mm+'-'+dd+'-'+yyyy;
+            document.write(today);
+           
+        </script>
+    </body>
+</html> -->
+
+<!-- 75. Function as expressions -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var y = fun(2,2)+5;
+            document.getElementById("ans").innerHTML = y;
+            function fun(a,b){
+                return a+b;
+
+            }
+        </script>
+    </body>
+</html> -->
+
+
+<!-- 76. Arrow function  -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+          
+            var a = (x,y) => x*y;
+            document.getElementById("ans").innerHTML = a(2,3);
+           
+           
+        </script>
+           
+            
+    </body>
+</html> -->
+
+<!-- 77. Arrow function with return keyword -->
+
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+          
+            var a = (x,y) => { return x*y};
+            document.getElementById("ans").innerHTML = a(3,3);
+           
+           
+        </script>
+           
+            
+    </body>
+</html> -->
+
+
+<!-- 78.Function are objects(methods) -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            function fun(a,b)
+            {
+                return a*b;
+            }
+
+            document.getElementById("ans").innerHTML = fun.toString();
+        </script>
+    </body>
+</html> -->
+
+
+<!-- 79. The call() method. -->
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var person = {
+                fullName: function(){
+                    return this.firstName+" "+this.secondName;
+                }
+            }
+             var person1 = {
+                 firstName:"Steve",
+                 secondName:"Jobs"
+             }
+
+             var person2 ={
+                 firstname:"Tim",
+                 secondName:"Cook"
+             }
+
+             document.getElementById("ans").innerHTML = person.fullName.call(person1);
+        </script>
+    </body>
+</html> -->
+
+
+<!-- 80. call() method with arguments  -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var person = {
+                fullName: function(location,city,state){
+                    return this.firstName+" "+this.secondName+", "+location+", "+city+", "+state;
+                }
+            }
+             var person1 = {
+                 firstName:"Steve",
+                 secondName:"Jobs"
+             }
+
+             var person2 ={
+                 firstName:"Tim",
+                 secondName:"Cook"
+             }
+
+             document.getElementById("ans").innerHTML = person.fullName.call(person2,"One Apple Park Way","Cupertino","California");
+        </script>
+    </body>
+</html> -->

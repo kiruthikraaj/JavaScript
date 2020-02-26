@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day2</title>
+</head>
+<body>
+    <canvas id="CanvasDraw" onclick="getClickPosition(event)" style="width: fit-content; border: 1px solid #362716;"></canvas>
+<script>  
+  
+    function getClickPosition(event){
+      var xPos = event.clientX;
+      var yPos = event.clientY;
+      console.log(xPos+" "+yPos)
+      drawLine(xPos,yPos);
+  }
+  function drawLine(x,y){
+    var canvas = document.getElementById('CanvasDraw');
+    //Always check for properties and methods, to make sure your code doesn't break in other browsers.
+    if (canvas.getContext) 
+     {
+      var context = canvas.getContext('2d');
+      // Reset the current path
+      context.beginPath(); 
+      // Staring point (10,45)
+       context.moveTo(0,0);
+      // End point (180,47)
+      context.lineTo(x,y);
+      // Make the line visible
+      context.stroke();
+       }
+  }
+</script>
+</body>
+</html>

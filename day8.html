@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day8</title>
+</head>
+
+<body>
+  <script>
+    let prev = performance.now();
+    let times = 0;
+
+    requestAnimationFrame(function measure(val) {
+      document.body.insertAdjacentText("beforeEnd", Math.floor(val - prev) + "  ");
+      prev = val;
+      if (times++ < 20) { requestAnimationFrame(measure); }
+    })
+  </script>
+</body>
+
+</html>

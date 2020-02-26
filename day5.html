@@ -1,0 +1,530 @@
+<!-- 2.Function Expression -->
+
+<html>
+    <body>
+        <p id="ans" ></p>
+        <script>
+            var x = function(a,b) {return a+b};
+            var a = x(5,1);
+            document.body.innerHTML = a;
+        </script>
+    </body>
+</html>
+
+<!-- 3. Function constructor -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var fun = new Function("a" , "b" , "return a*b");
+            var a = fun(2,5);
+            document.body.innerHTML = a;
+        </script>
+    </body>
+</html> -->
+
+<!-- 4.Hoisting in function -->
+
+<!-- <html>
+    <body>
+        <p id='ans'></p>
+        <script>
+           var x =  fun(5);
+           document.body.innerHTML  = x;
+            function fun(a){
+                return a*a;
+            }
+        </script>
+    </body>
+</html> -->
+
+<!-- 5. self invoking function  -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+       
+
+       ( function fun()
+        {
+            document.body.innerHTML = "hello!!";
+        })();
+    </script>
+    </body>
+</html> -->
+
+<!-- 6. Function as values -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+        var x = fun(2,3);
+        var y = x+5;
+        document.body.innerHTML = y;
+
+        function fun(a,b)
+        {
+            return a+b;
+        }
+
+        </script>
+    </body>
+</html> -->
+
+<!-- 7. Function as expressions -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var y = fun(2,2)+5;
+            document.body.innerHTML = y;
+            function fun(a,b){
+                return a+b;
+
+            }
+        </script>
+    </body>
+</html> -->
+
+<!-- 8. Function are objects(properties) -->
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            function fun()
+            {
+                return arguments.length;
+            }
+            document.body.innerHTML = fun(2,3,4,5,6);
+        </script>
+        
+    </body>
+</html> -->
+
+<!-- 9.Function are objects(methods) -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            function fun(a,b)
+            {
+                return a*b;
+            }
+
+            document.body.innerHTML = fun.toString();
+        </script>
+    </body>
+</html> -->
+
+<!-- 10. Arrow function  -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+          
+            var a = (x,y) => x*y;
+            document.body.innerHTML = a(2,3);
+           
+           
+        </script>
+           
+            
+    </body>
+</html> -->
+
+
+<!-- 11. Arrow function with return keyword -->
+
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+          
+            var a = (x,y) => { return x*y};
+            document.body.innerHTML = a(3,3);
+           
+           
+        </script>
+           
+            
+    </body>
+</html> -->
+
+<!-- 12. Parameter defaults (undefined) -->
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        
+        <script>
+            function fun(x,y){
+                if(y === undefined)
+                {
+                    y = 2;
+                }
+                return x*y;
+            }
+            document.body.innerHTML = fun(5);
+        </script>
+    </body>
+</html> -->
+
+<!-- 13. parameter values in function declaration -->
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        
+        <script>
+            function fun(x=2,y=2){
+               
+                return x*y;
+            }
+            document.body.innerHTML = fun();
+        </script>
+    </body>
+</html> -->
+
+<!-- 14. parameter values in function declaration -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        
+        <script>
+            function fun(x=2,y=2){
+               
+                return x*y;
+            }
+            document.body.innerHTML = fun(7);
+        </script>
+    </body>
+</html> -->
+
+<!-- 15. Argument object (find max) -->
+
+<!-- <html>
+<body>
+<p id="ans"></p>
+
+<script>
+function Max() {
+  var i;
+  var max = -Infinity;
+  for(i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+} 
+document.body.innerHTML = Max(4, 7,9);
+</script>
+</body>
+</html> -->
+
+<!-- 16. Argument as object (find min) -->
+
+<!-- <html>
+<body>
+<p id="ans"></p>
+
+<script>
+function Min() {
+  var i;
+  var min = +Infinity;
+  for(i = 0; i < arguments.length; i++) {
+    if (arguments[i] < min) {
+      min = arguments[i];
+    }
+  }
+  return min;
+} 
+document.body.innerHTML = Min(4, 7,9);
+</script>
+</body>
+</html> -->
+
+
+<!-- 17. Arguments as object (sum all arguments) -->
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            function addAll(){
+                var i;
+                var sum = 0;
+                for(i=0; i<arguments.length; i++ )
+                {
+                    sum += arguments[i];
+                }
+                return sum;
+            }
+            document.body.innerHTML = addAll(4,5,6);
+        </script>
+    </body>
+</html> -->
+
+<!-- 18. Function in objects -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var obj ={
+                firstWord : "Hello",
+                secondWord: "World",
+                fullWord: function() {
+                    {return this.firstWord +" "+this.secondWord;
+                    }
+                }
+            }
+            document.body.innerHTML = obj.fullWord();
+        </script>
+    </body>
+</html> -->
+
+<!-- 19. invoking function as constructor  -->
+<!-- <html>
+    <body>
+        <p id="ans" ></p>
+        <script>
+            function fun(arg1,arg2){
+                this.firstName = arg1;
+                this.secondName = arg2;
+            }
+
+            var x = new fun("hello","world");
+            document.body.innerHTML = x.firstName;
+        </script>
+    </body>
+</html> -->
+
+<!-- 20. The call() method. -->
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var person = {
+                fullName: function(){
+                    return this.firstName+" "+this.secondName;
+                }
+            }
+             var person1 = {
+                 firstName:"Steve",
+                 secondName:"Jobs"
+             }
+
+             var person2 ={
+                 firstname:"Tim",
+                 secondName:"Cook"
+             }
+
+             document.body.innerHTML = person.fullName.call(person1);
+        </script>
+    </body>
+</html> -->
+
+<!-- 21. call() method with arguments  -->
+
+<!-- <html>
+    <body>
+        <p id="ans"></p>
+        <script>
+            var person = {
+                fullName: function(location,city,state){
+                    return this.firstName+" "+this.secondName+", "+location+", "+city+", "+state;
+                }
+            }
+             var person1 = {
+                 firstName:"Steve",
+                 secondName:"Jobs"
+             }
+
+             var person2 ={
+                 firstName:"Tim",
+                 secondName:"Cook"
+             }
+
+             document.body.innerHTML = person.fullName.call(person2,"One Apple Park Way","Cupertino","California");
+        </script>
+    </body>
+</html> -->
+
+<!-- 22.The apply() method  -->
+
+<!-- <html>
+<body>
+
+
+<p id="ans"></p>
+
+<script>
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+var x = person.fullName.apply(person1, ["Oslo", "Norway"]); 
+document.body.innerHTML = x; 
+</script>
+
+</body>
+</html> -->
+
+<!-- 23. compared with call() method  -->
+
+<!-- <html>
+<body>
+
+<p id="ans"></p>
+
+<script>
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+var person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+var x = person.fullName.call(person1, "Oslo", "Norway"); 
+document.body.innerHTML = x; 
+</script>
+
+</body>
+</html> -->
+
+
+<!-- 24. Simulate a max method  -->
+
+<!-- <html>
+<body>
+
+<h2>JavaScript Math.max()</h2>
+
+<p>This example returns the highest number in a list of number arguments:</p>
+
+<p id="ans"></p>
+
+<script>
+document.body.innerHTML = Math.max(1,2,3); 
+</script>
+
+</body>
+</html> -->
+
+<!-- 25. Apply method  -->
+
+<!-- <html>
+<body>
+
+<p id="ans"></p>
+
+<script>
+document.body.innerHTML = Math.max.apply(null, [1,2,3]); 
+</script>
+
+</body>
+</html> -->
+
+
+<!-- 26. First argument null  -->
+
+<!-- <html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Math.max.apply(Math, [1,2,3]); 
+</script>
+
+</body>
+</html> -->
+
+
+<!-- 27. First argument null  -->
+
+<!-- <html>
+<body>
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Math.max.apply(" ", [1,2,3]); 
+</script>
+
+</body>
+</html> -->
+
+<!-- 28. First argument null  -->
+
+<!-- <html>
+<body>
+
+<p id="ans"></p>
+
+<script>
+document.body.innerHTML = Math.max.apply(0, [1,2,3]); 
+</script>
+
+</body>
+</html> -->
+
+<!-- 29. Global Variables  -->
+
+<!-- <html>
+<body>
+
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="ans"></p>
+
+<script>
+function myFunction() {
+  var a = 4;
+  document.body.innerHTML = a * a;
+} 
+
+</script>
+
+</body>
+</html> -->
+
+<!-- 30. Function variable defined outside  -->
+
+<!-- <html>
+<body>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="demo"></p>
+
+<script>
+var a = 4;
+function myFunction() {
+  document.getElementById("demo").innerHTML = a * a;
+} 
+</script>
+
+</body>
+</html> -->
+
+
+
+

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <title>Move Me</title>
+  <script type="text/javascript">
+    //init object globally
+    var particle = null;
+    function init() {
+      particle = document.getElementById("particleDot");
+      particle.style.position = 'relative';
+      particle.style.left = '0px';
+      particle.style.top = '0px';
+    }
+    function getKeyAndMove(e) {
+      var key_code = e.which || e.keyCode;
+      switch (key_code) {
+        case 37: //left arrow key
+          moveLeft();
+          break;
+        case 38: //Up arrow key
+          moveUp();
+          break;
+        case 39: //right arrow key
+          moveRight();
+          break;
+        case 40: //down arrow key
+          moveDown();
+          break;
+      }
+    }
+    function moveLeft() {
+      particle.style.left = parseInt(particle.style.left) - 10 + 'px';
+      check(particle.style.left, particle.style.top);
+    }
+    function moveUp() {
+      particle.style.top = parseInt(particle.style.top) - 10 + 'px';
+      check(particle.style.left, particle.style.top);
+    }
+    function moveRight() {
+      particle.style.left = parseInt(particle.style.left) + 10 + 'px';
+      check(particle.style.left, particle.style.top);
+    }
+    function moveDown() {
+      particle.style.top = parseInt(particle.style.top) + 10 + 'px';
+      check(particle.style.left, particle.style.top);
+    }
+
+    function check(x, y) {
+      var offsets = document.getElementById('target').getBoundingClientRect();
+      var offsetsObst1 = document.getElementById('obst1').getBoundingClientRect();
+      var offsetsObst2 = document.getElementById('obst2').getBoundingClientRect();
+      var obst1Top = offsetsObst1.top;
+      var obst1Left = offsetsObst1.left;
+      var obst2Top = offsetsObst2.top;
+      var obst2Left = offsetsObst2.left;
+      var top = offsets.top;
+      var left = offsets.left;
+      console.log(top + " " + left)
+      // document.getElementById("result").innerHTML = (obst2Top +" " + obst2Left)
+      // document.getElementById("result").innerHTML = (x + " " + y)
+      // console.log(x + "" + y)
+
+      if (obst1Top == 278.5 && obst1Left == 68.296875) {
+        if ((x > "0px" && x < "110px") && (y > "220px" && y < "310px")) {
+          document.getElementById("result").innerHTML = "You Lose !!!"
+          setTimeout(function () {
+            location.reload()
+          }, 1000);
+        }
+        // else if(( x>="10px" && x<"110px" ) && ( y>="210px" && y<"320px")){
+        //   document.getElementById("result").innerHTML = "You Lose !!!"
+
+        // }
+      }
+
+      if (obst2Top == 278.5 && obst2Left == 273.1875) {
+        if ((x > "210px" && x < "320px") && (y > "220px" && y < "310px")) {
+          document.getElementById("result").innerHTML = "You Lose !!!"
+          setTimeout(function () {
+            location.reload()
+          }, 1000);
+        }
+      }   
+
+      if (top == 276.5 && left == 631)
+        if (x == '620px' && y == '260px') {
+          document.getElementById("result").innerHTML = "You Win !!!"
+          setTimeout(function () {
+            location.reload()
+          }, 1000);
+        }
+
+      // if(top == x && left == y){
+      //   console.log("Sucess")
+      // }
+    }
+
+
+    window.onload = init;
+  </script>
+</head>
+
+<body onkeydown='getKeyAndMove(event)'>
+  <i id="particleDot" class="fa fa-dot-circle-o fa-4x" aria-hidden="true" style="z-index: 1;"></i>
+
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+
+  <div id="target"
+    style="position: absolute;border: 1px solid #000;background-color: green; width: 50px;height: 50px;right: 50%;bottom: 50%;">
+
+  </div>
+
+
+  <!-- Obstacles -->
+  <div id="obst1" style="position: absolute;background-color: red; width: 50px;height: 50px;left: 5%;bottom: 50%;">
+  </div>
+  <div id="obst2" style="position: absolute;background-color: red; width: 50px;height: 50px;left: 20%;bottom: 50%;">
+  </div>
+  <div id="obst3"
+    style="position: absolute;border: 1px solid #000;background-color: red; width: 50px;height: 50px;left: 35%;bottom: 50%;">
+  </div>
+  <div id="obst4"
+    style="position: absolute;border: 1px solid #000;background-color: red; width: 50px;height: 50px;left: 25%;bottom: 80%;">
+  </div>
+
+
+
+
+  <div id="result"
+    style="position: absolute;color: green;font-size: xx-large;font-weight: bold;text-align: center; width:100px;height: 50px;right: 48.5%;bottom: 40%;">
+  </div>
+
+</body>
+
+</html>
